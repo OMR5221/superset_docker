@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+
+  # Superset container
+  superset:
+    build: ./docker-superset
+    # image: amancevice/superset:0.18.5
+    container_name: superset
+    # network_mode: "host"
+    ports:
+      - 8088:8088
+    networks:
+      - data_net
+
+networks:
+  data_net:
